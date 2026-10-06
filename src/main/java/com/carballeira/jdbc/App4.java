@@ -301,13 +301,13 @@ public class App4 {
                             String notaFinalBD = resultado.getString("notaFinal");
 
                             System.out.println("\nALUMNO ENCONTRADO:");
-                            System.out.println("DNI: " + resultado.getString("dni"));
-                            System.out.println("Nombre completo: " + resultado.getString("nombre") + " " +
+                            	System.out.println("DNI: " + resultado.getString("dni"));
+                            	System.out.println("Nombre completo: " + resultado.getString("nombre") + " " +
                                                resultado.getString("apellido1") + " " +
                                                resultado.getString("apellido2"));
-                            System.out.println("Ciclo: " + resultado.getString("ciclo") +
+                            	System.out.println("Ciclo: " + resultado.getString("ciclo") +
                                                " | Curso: " + resultado.getInt("curso"));
-                            System.out.println("Notas: 1ª Eva: " + (eva1 == null ? "Sin nota" : eva1) +
+                            	System.out.println("Notas: 1ª Eva: " + (eva1 == null ? "Sin nota" : eva1) +
                                                ", 2ª Eva: " + (eva2 == null ? "Sin nota" : eva2) +
                                                ", 3ª Eva: " + (eva3 == null ? "Sin nota" : eva3) +
                                                " | Nota Final: " + (notaFinalBD == null ? "Sin calcular" : notaFinalBD));
