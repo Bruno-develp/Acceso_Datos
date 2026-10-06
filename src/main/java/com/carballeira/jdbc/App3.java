@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class App3 {
+	
+// Hola comprobacion de que funciona de casa a clase
 
     public static void main(String[] args) {
         String url = "jdbc:sqlite:java26.db";
