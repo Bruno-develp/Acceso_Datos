@@ -8,9 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-/**
- * Hello world!
- */
+
+
 public class App {
     public static void main(String[] args) {
         String url = "jdbc:sqlite:java26.db";
