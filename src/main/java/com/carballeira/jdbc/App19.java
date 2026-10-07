@@ -39,7 +39,7 @@ public class App19 {
 
             System.out.println("\nALUMNOS SUSPENSOS");
             System.out.print("Introduce la nota límite: ");
-            int notaLimite = Integer.parseInt(teclado.nextLine());
+            	int notaLimite = Integer.parseInt(teclado.nextLine());
 
             String sqlSuspensos = "SELECT * FROM alumno WHERE notaFinal >= ?";
             PreparedStatement psSuspensos = conexion.prepareStatement(sqlSuspensos);
@@ -63,7 +63,6 @@ public class App19 {
 
         } catch (SQLException e) {
             System.out.println("Error al trabajar con la base de datos: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }
