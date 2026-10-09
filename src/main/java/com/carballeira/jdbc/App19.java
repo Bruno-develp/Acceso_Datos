@@ -53,7 +53,7 @@ public class App19 {
                     rsSuspensos.getString("apellido1") + " " +
                     rsSuspensos.getString("apellido2") + ", " +
                     rsSuspensos.getString("nombre") + "  Nota final: " +
-                    rsSuspensos.getInt("notaFinal")
+                    rsSuspensos.getInt("notaF")
                 );
             }
 
