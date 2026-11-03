@@ -1,6 +1,3 @@
-Ana;8.5
-Luis;4.2
-Marta;7.0
-Pedro;3.5
-Lucia;9.1
-Carlos;6.0
+31313213a, Miguel, 2
+43421432432g, Miguel, 2
+432142412g, Bruno, 5

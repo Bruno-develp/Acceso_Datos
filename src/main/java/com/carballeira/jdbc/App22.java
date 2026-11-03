@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class App22 {
 	public static void main(String[] args) {
-		ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+		ArrayList<Alumno2> listaAlumnos = new ArrayList<>();
 		System.out.println("Numero de alumnos: " + listaAlumnos.size());
 		String url = "jdbc:sqlite:java26.db";
 		
@@ -38,7 +38,7 @@ public class App22 {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Alumno alumnoBD = new Alumno(
+				Alumno2 alumnoBD = new Alumno2(
 						rs.getString("dni"),
 						rs.getString("nombre"),
 						rs.getString("apellido1"),
@@ -55,7 +55,7 @@ public class App22 {
 			System.out.println("Numero de alumnos guardados: " + listaAlumnos.size());
 			System.out.println("\nAlumnos guardados en el arrayList\n");
 			
-			for(Alumno alumno : listaAlumnos) {
+			for(Alumno2 alumno : listaAlumnos) {
 				System.out.println(
 	                    alumno.getDni() + " - " +
 	                    alumno.getNombre() + " " +
@@ -67,7 +67,7 @@ public class App22 {
 			
 			
 			System.out.println("\nAlumnos Suspensos\n");
-			for(Alumno alumno : listaAlumnos) {
+			for(Alumno2 alumno : listaAlumnos) {
 				if(alumno.getNotaFinal() < 5) {
 					System.out.println(
 		                    alumno.getNombre() + " " +

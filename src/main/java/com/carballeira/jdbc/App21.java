@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class App21 {
 	public static void main(String[] args) {
 		
-//		Alumno alumno = new Alumno(
+//		Alumno2 alumno = new Alumno(
 //				"11111111A",
 //				"Ana",
 //				"Garcia",
@@ -38,7 +38,7 @@ public class App21 {
 			
 			System.out.println("ALUMNO CREADO DESDE LA BASE DE DATOS");
 			while(rs.next()) {
-				Alumno alumnoBD = new Alumno(
+				Alumno2 alumnoBD = new Alumno2(
 						rs.getString("dni"),
 						rs.getString("nombre"),
 						rs.getString("apellido1"),

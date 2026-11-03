@@ -1,8 +1,12 @@
 package com.carballeira.jdbc;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,7 +19,7 @@ public class App40 {
 		String ficheroTXT = "alumnos.txt";
 		
 		Scanner sc = new Scanner(System.in);
-		int opcion;
+		int opcion ;
 		
 		do {
 			System.out.println("----- Gestión alumnos -----");
@@ -26,6 +30,7 @@ public class App40 {
 			System.out.println("5. Exportar alumnos a TXT");
 			System.out.println("0. Salir");
 			System.out.println("Elige una opción: ");
+				opcion = Integer.parseInt(sc.nextLine());
 			
 			switch(opcion) {
 				case 1 -> {
@@ -81,16 +86,58 @@ public class App40 {
 				
 				case 4 -> {
 					File fichero = new File(ficheroDAT);
+					
+					if(!fichero.exists()) {
+						System.out.println("El fichero " + ficheroDAT  + " no existe.");
+						break;
+					}
+					
+					try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichero))){
+						
+						ArrayList<Alumno> listaRead = (ArrayList<Alumno>) ois.readObject();
+						listaAlumnos.clear();
+						listaAlumnos.addAll(listaRead);
+						System.out.println(listaRead);
+						System.out.println("Alumnos cargados correctamente desde el .dat");
+					}catch(IOException | ClassNotFoundException e) {
+						System.out.println("Error: " + e.getMessage());
+					}
+				}
+				
+				case 5 -> {
+					if(listaAlumnos.isEmpty()) {
+						System.out.println("No hay alumnos");
+						break;
+					}
+					
+					try(BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroTXT))){
+						
+						for(Alumno a : listaAlumnos) {
+							bw.write(a.getDni()+ ", " + a.getNombre() + ", " + a.getNotaFinal());
+							bw.newLine();
+						}
+						
+						System.out.println("Alumnos exportados a: " + ficheroTXT );
+						
+					}catch(IOException e) {
+						System.out.println("Error: " + e.getMessage());
+					}
 				}
 				
 				
+				case 0 -> {
+					System.out.println("Saliendo de la aplicacion..");
+				}
 				
+				default -> {
+					System.out.println("Opcion no valida");
+				}
 				
 			}
-			
-		}while(opcion != 0);
 		
-		sc.close();
+		}while (opcion != 0);
+		
+		
 		
 		
 		
